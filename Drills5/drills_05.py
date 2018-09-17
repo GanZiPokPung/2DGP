@@ -19,6 +19,7 @@ def run_from_pos_to_pos():
     x, y = 203, 535
 
     for posX, posY in position.items():
+        checkX = 0
         distX = math.fabs(posX - x)
         distY = math.fabs(posY - y)
         inclination = distY / distX
@@ -28,13 +29,18 @@ def run_from_pos_to_pos():
         else:
             checkRight = False
 
-
-
-
-        while :
+        while checkX < distX :
             clear_canvas()
             grass.draw(400, 30)
-            character.clip_draw(frame * 100, 100, 100, 100, x, 90)
+            if checkRight == True:
+                character.clip_draw(frame * 100, 100, 100, 100, x, y)
+                x += 1
+                y = y + (inclination * x)
+            else:
+                character.clip_draw(frame * 100, 0, 100, 100, x, y)
+                x -= 1
+                y = y + (inclination * x)
+            checkX += 1
             update_canvas()
             frame = (frame + 1) % 8
             delay(0.05)
