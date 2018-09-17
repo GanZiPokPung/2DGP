@@ -8,16 +8,16 @@ character = load_image('animation_sheet.png')
 x = 0
 frame = 0
 
+position = {203 : 535 , 132 : 243, 535 : 470,
+            477 : 203, 715 : 136, 316 : 225,
+            510 : 92, 692 : 518, 682 : 336, 712 : 349}
+
+def run_from_pos_to_pos():
+   pass
 
 while True:
-    clear_canvas()
-    grass.draw(400, 30)
-    character.clip_draw(frame * 100, 100, 100, 100, x, 90)
-    update_canvas()
+    run_from_pos_to_pos()
 
-    frame = (frame + 1) % 8
-    x += 5
-    delay(0.05)
 
 close_canvas()
 
