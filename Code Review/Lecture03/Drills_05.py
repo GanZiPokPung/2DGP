@@ -51,10 +51,10 @@ def move_from_left_to_center():
         delay(0.01)
 
 def make_rectangle():
-    #move_from_center_to_right()
-    #move_up()
-    #move_left()
-    #move_down()
+    move_from_center_to_right()
+    move_up()
+    move_left()
+    move_down()
     move_from_left_to_center()
 
 def make_circle():
