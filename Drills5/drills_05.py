@@ -18,15 +18,15 @@ def run_from_pos_to_pos():
 
     for posX, posY in position.items():
         count = 0
-        gotoX = (posX - x) / 100
-        gotoY = (posY - y) / 100
+        gotoX = (posX - x) / 10
+        gotoY = (posY - y) / 10
 
         if(posX - x) > 0:
             checkRight = True
         else:
             checkRight = False
 
-        while count <= 100 :
+        while count <= 10 :
             clear_canvas()
             grass.draw(400, 30)
             if checkRight == True:
