@@ -13,7 +13,8 @@ position = {203 : 535 , 132 : 243, 535 : 470,
             510 : 92, 692 : 518, 682 : 336, 712 : 349}
 
 def run_from_pos_to_pos():
-   pass
+    for pos in position:
+        pos.keys()
 
 while True:
     run_from_pos_to_pos()
