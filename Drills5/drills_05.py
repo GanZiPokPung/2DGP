@@ -40,8 +40,12 @@ def run_from_pos_to_pos():
             frame = (frame + 1) % 8
             delay(0.05)
 
+
+
 while True:
     run_from_pos_to_pos()
+
+
 
 close_canvas()
 
