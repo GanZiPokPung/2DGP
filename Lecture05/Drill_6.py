@@ -19,10 +19,12 @@ def move_to_point_character():
 
     global count
 
-    if posX != x or posY != y:
-        count += 1
-        posX += gotoX
-        posY += gotoY
+    if count > 100:
+        return
+
+    count += 1
+    posX += gotoX
+    posY += gotoY
 
 
 def handle_events():
@@ -41,8 +43,8 @@ def handle_events():
         elif event.type == SDL_MOUSEBUTTONDOWN:
             x, y = event.x, KPU_HEIGHT - 1 - event.y
             count = 0
-            gotoX = (x - posX) / 100
-            gotoY = (y - posY) / 100
+            gotoX = (x - 50 - posX) / 100
+            gotoY = (y + 50 - posY) / 100
             if (posX - x) > 0:
                 checkRight = 0
             else:
