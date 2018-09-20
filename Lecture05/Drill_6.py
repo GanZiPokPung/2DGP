@@ -2,6 +2,8 @@ from pico2d import *
 
 KPU_WIDTH, KPU_HEIGHT = 1280, 1024
 
+def move_to_point_character():
+    pass
 
 def handle_events():
     global running
@@ -11,8 +13,6 @@ def handle_events():
         if event.type == SDL_QUIT:
             running = False
         elif event.type == SDL_MOUSEMOTION:
-            #윈도우 좌표계이기 때문에 y축은 변환 계산이 필요하다.
-            #599
             x, y = event.x, KPU_HEIGHT - 1 - event.y
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
@@ -22,6 +22,7 @@ open_canvas(KPU_WIDTH, KPU_HEIGHT)
 # fill here
 kpu_ground = load_image('KPU_GROUND.png')
 arrow = load_image('hand_arrow.png')
+character = load_image('animation_sheet.png')
 
 running = True
 x, y = KPU_WIDTH // 2, KPU_HEIGHT // 2
