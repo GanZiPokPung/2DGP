@@ -13,15 +13,11 @@ checkRight = 0
 count = 101
 
 def move_to_point_character():
-    global checkRight
     global posX
     global posY
-
     global count
-
     if count > 100:
         return
-
     count += 1
     posX += gotoX
     posY += gotoY
