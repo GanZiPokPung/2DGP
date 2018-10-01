@@ -30,6 +30,7 @@ def handle_events():
     global gotoY
     global checkRight
     global count
+    #get_events()는 입력받은 event를 리스트로 가지고 온다.
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
