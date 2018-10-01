@@ -17,7 +17,6 @@ count = 101
 
 size = 10
 points = [(random.randint(400, 1000), random.randint(300, 1000)) for i in range(size)]
-points.insert(0, (400, 300))
 n = 1
 
 def move_to_point_character(p1, p2):
