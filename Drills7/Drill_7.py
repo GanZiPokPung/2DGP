@@ -6,17 +6,15 @@ import random
 KPU_WIDTH, KPU_HEIGHT = 1280, 1024
 
 running = True
-x, y = KPU_WIDTH // 2, KPU_HEIGHT // 2
 frame = 0
-hide_cursor()
 
-posX, posY = 400, 300
-gotoX, gotoY = 0, 0
+posX, posY = 600, 500
 checkRight = 0
-count = 101
 
-size = 10
-points = [(random.randint(400, 1000), random.randint(300, 1000)) for i in range(size)]
+size = 3
+points = [(random.randint(300, 800), random.randint(250, 800)) for i in range(size)]
+points.insert(0,(posX, posY))
+size = size + 1
 n = 1
 
 def move_to_point_character(p1, p2):
