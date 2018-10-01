@@ -1,6 +1,8 @@
 from pico2d import *
 import random
 
+
+
 KPU_WIDTH, KPU_HEIGHT = 1280, 1024
 
 running = True
