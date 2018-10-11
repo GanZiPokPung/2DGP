@@ -87,3 +87,4 @@ while running:
 
 #close
 close_canvas()
+
