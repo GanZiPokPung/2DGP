@@ -37,7 +37,7 @@ def draw():
 
     update_canvas()
 
-
+   
 
 def update():
     global time
