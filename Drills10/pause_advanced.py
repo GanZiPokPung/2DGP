@@ -37,8 +37,6 @@ def draw():
 
     update_canvas()
 
-
-
 def update():
     global time
     global blinkcheck
@@ -49,7 +47,6 @@ def update():
             blinkcheck = False
         time = 0
     time += 0.01
-
 
 def pause():
     pass
