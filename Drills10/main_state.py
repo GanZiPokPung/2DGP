@@ -59,10 +59,8 @@ def exit():
 
 def pause():
     #pause 시 수행할것들
-    #clear_canvas()
     grass.draw()
     boy.draw()
-    #update_canvas()
 
 
 def resume():
