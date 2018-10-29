@@ -199,6 +199,7 @@ class GhostBoy:
             if self.radius + self.originY > self.y :
                 self.y += self.radius / 60.0
             else:
+                self.y = self.originY
                 self.upCheck = False
         else:
             self.angle += self.circleTimer
