@@ -180,7 +180,7 @@ class Boy:
 class GhostBoy:
     def __init__(self, x, y):
         self.x, self.y = x, y
-        self.originY = y
+        self.originX, self.originY = x, y
         self.image = load_image('animation_sheet.png')
         self.dir = 1
         self.velocity = 0
@@ -199,15 +199,15 @@ class GhostBoy:
             if self.radius + self.originY > self.y :
                 self.y += self.radius / 60.0
             else:
-                self.y = self.originY
                 self.upCheck = False
         else:
             self.angle += self.circleTimer
-            self.x += math.cos(math.radians(self.angle)) * self.radius
-            self.y += math.sin(math.radians(self.angle)) * self.radius
+            self.x = self.originX + math.cos(math.radians(self.angle)) * self.radius
+            self.y = self.originY + math.sin(math.radians(self.angle)) * self.radius
 
     def draw(self):
         if self.dir == 1:
             self.image.clip_draw(int(self.frame) * 100, 300, 100, 100, self.x, self.y)
         else:
             self.image.clip_draw(int(self.frame) * 100, 200, 100, 100, self.x, self.y)
+        print(self.radius)
