@@ -75,9 +75,10 @@ class WalkingState:
         # boy.y = clamp(boy.canvas_height // 2, boy.y, boy.bg.h - boy.canvas_height // 2)
 
         if boy.leftG * (boy.x - boy.leftX1) + boy.leftY1 - boy.y < 0:
-            boy.x += 10
-        elif boy.rightG * (boy.x - boy.rightX1) + boy.rightY1 - boy.y > 0:
-            boy.x -= 10
+            boy.x += 1
+
+        if boy.rightG * (boy.x - boy.rightX1) + boy.rightY1 - boy.y < 0:
+            boy.x -= 1
 
         boy.x = clamp(0, boy.x, boy.bg.w)
         boy.y = clamp(boy.down, boy.y, boy.up)
@@ -143,8 +144,8 @@ class Boy:
         self.calLines()
 
     def calLines(self):
-        self.leftG = math.fabs(self.pos.get('downL')[1] - self.pos.get('upL')[1]) / math.fabs(self.pos.get('downL')[0] - self.pos.get('upL')[0])
-        self.rightG = math.fabs(self.pos.get('downR')[1] - self.pos.get('upR')[1]) / math.fabs(self.pos.get('downR')[0] - self.pos.get('upR')[0])
+        self.leftG = (self.pos.get('downL')[1] - self.pos.get('upL')[1]) / (self.pos.get('downL')[0] - self.pos.get('upL')[0])
+        self.rightG = (self.pos.get('downR')[1] - self.pos.get('upR')[1]) / (self.pos.get('downR')[0] - self.pos.get('upR')[0])
         self.leftX1 = self.pos.get('downL')[0]
         self.leftY1 = self.pos.get('downL')[1]
         self.rightX1 = self.pos.get('downR')[0]
